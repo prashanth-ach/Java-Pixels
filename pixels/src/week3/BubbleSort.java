@@ -1,4 +1,4 @@
-package mypackage;
+package week3;
 
 import java.util.Scanner;
 
@@ -32,6 +32,7 @@ public class BubbleSort {
 		for(int i=0; i < n; i++){
 			System.out.print("sorted:"+arr[i]+"\t");
 		}
+		scan.close();
 
 	}
 

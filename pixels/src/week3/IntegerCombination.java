@@ -1,4 +1,4 @@
-package mypackage;
+package week3;
 
 import java.math.BigInteger;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package mypackage;
+package week3;
 
 public class SpiralClockwise {
 

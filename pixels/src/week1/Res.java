@@ -1,4 +1,4 @@
-package tasks;
+package week1;
 
 //prime number
 import java.util.Scanner;

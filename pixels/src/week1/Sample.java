@@ -1,4 +1,4 @@
-package tasks;
+package week1;
 
 public class Sample {
 
