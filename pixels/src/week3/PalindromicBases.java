@@ -4,7 +4,7 @@ public class PalindromicBases {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int i;
+		int i,k=0;
 		for (i = 1; i <=1000000; i++) {
 			String n = Integer.toString(i);
 			String l = new StringBuffer(n).reverse().toString();
@@ -29,12 +29,13 @@ public class PalindromicBases {
 				if(m.equals(y))
 		
 				{
-					System.out.println(i);
+					k+=i;
 				}
 
 			} 
 	
 		}
+		System.out.println(k);
 	}
 
 }
