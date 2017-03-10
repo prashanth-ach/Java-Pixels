@@ -61,6 +61,7 @@ public class MovieData {
 		in.close();
 		System.out.println("Highest Rating:" + l.size());
 	}
+
 	public void lowRating() throws IOException {
 		ArrayList<Double> l = new ArrayList<Double>();
 		BufferedReader in = new BufferedReader(new FileReader("E:/workspace/Java-Pixels/txtdata/chandra.txt"));
@@ -79,66 +80,64 @@ public class MovieData {
 		in.close();
 		System.out.println("Low Rating:" + l.size());
 	}
+
 	public void maxTimes() throws IOException {
 		ArrayList<Integer> l = new ArrayList<Integer>();
 		BufferedReader in = new BufferedReader(new FileReader("E:/workspace/Java-Pixels/txtdata/chandra.txt"));
 		String line = "";
-		while ((line = in.readLine()) != null)
-		{
-			String parts[] = line.split("\t");			
-				l.add(Integer.parseInt(parts[0]));
-				}
-		int currentMax=0; 
+		while ((line = in.readLine()) != null) {
+			String parts[] = line.split("\t");
+			l.add(Integer.parseInt(parts[0]));
+		}
+		int currentMax = 0;
 		int maxCount = 0;
-		int current=0;
+		int current = 0;
 		int count = 0;
-		for(int i = 0; i < l.size(); i++) {
-		    int item = l.get(i);
-		    if(item==current) {
-		        count++;
-		    } 
-		    else { 
-		        if(count > maxCount) { 
-		            maxCount = count; 
-		            currentMax = current; 
-		        }
-		        count = 1;
-		        current = item;
-		    }
+		for (int i = 0; i < l.size(); i++) {
+			int item = l.get(i);
+			if (item == current) {
+				count++;
+			} else {
+				if (count > maxCount) {
+					maxCount = count;
+					currentMax = current;
+				}
+				count = 1;
+				current = item;
+			}
 		}
 		in.close();
-		System.out.println("user id:"+currentMax+"  Watched maximum times with value:"+maxCount);
+		System.out.println("user id:" + currentMax + "  Watched maximum times with value:" + maxCount);
 	}
+
 	public void minTimes() throws IOException {
 		ArrayList<Integer> l = new ArrayList<Integer>();
 		BufferedReader in = new BufferedReader(new FileReader("E:/workspace/Java-Pixels/txtdata/chandra.txt"));
 		String line = "";
-		while ((line = in.readLine()) != null)
-		{
-			String parts[] = line.split("\t");			
-				l.add(Integer.parseInt(parts[0]));
-				}
+		while ((line = in.readLine()) != null) {
+			String parts[] = line.split("\t");
+			l.add(Integer.parseInt(parts[0]));
+		}
 		@SuppressWarnings("unused")
-		int currentMin=0; 
+		int currentMin = 0;
 		int minCount = 0;
-		int current=0;
-		int count=1;
-		for(int i = 0; i < l.size(); i++) {
-		    int item = l.get(i);
-		    if(item==current) {
-		        count++;
-		    } 
-		    else { 
-		        if(count < minCount) { 
-		            minCount = count; 
-		            currentMin = current; 
-		        }
-		        count = 1;
-		        current = item;
-		    }
+		int current = 0;
+		int count = 1;
+		for (int i = 0; i < l.size(); i++) {
+			int item = l.get(i);
+			if (item == current) {
+				count++;
+			} else {
+				if (count < minCount) {
+					minCount = count;
+					currentMin = current;
+				}
+				count = 1;
+				current = item;
+			}
 		}
 		in.close();
-		System.out.println("User id:"+current+"  Watched min times with value:"+count);
+		System.out.println("User id:" + current + "  Watched min times with value:" + count);
 	}
 
 	public static void main(String[] args) throws Exception {
