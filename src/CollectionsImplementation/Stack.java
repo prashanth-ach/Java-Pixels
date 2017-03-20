@@ -29,7 +29,10 @@ public class Stack {
 		s.push(2);
 		s.push(3);
 		s.push(4);
-		s.display();
+		s.pop();
+		s.pop();
+		s.push(5);
+		s.push(6);
 		s.pop();
 		s.display();
 

@@ -14,7 +14,8 @@ public class Palin {
 		char[] x = n.toCharArray();
 		String l = new StringBuffer(n).reverse().toString();
 		char[] p = l.toCharArray();
-		if (Arrays.equals(x, p)) {
+		if (Arrays.equals(x, p)) 
+		{
 			System.out.println("palindrome");
 		} else {
 			System.out.println("Not a palindrome");

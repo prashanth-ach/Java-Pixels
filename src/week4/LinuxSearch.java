@@ -1,3 +1,7 @@
+//grep command implementation using java to count the occurances
+//of a particular word in a directory of java codes
+//................................................................
+//The below program i have used to count occurances of keyword "pubilc"
 package week4;
 
 import java.io.BufferedReader;
@@ -6,38 +10,33 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class LinuxSearch {
-	public int cnt=0;
-	public void plugin_execute() throws IOException 
-    {
-   
- 
-            File dir = new File("E:/workspace/Java-Pixels/src/week4");
-            String[] children = dir.list();
-            if (children == null) 
-            {
-                System.out.println("does not exist is not a directory");
-            } 
-            else
-            {
-                for (int i = 0; i < children.length; i++)
-                {
-                    String filename = children[i];
-                    
-                    //System.getProperty("E:/workspace/Java-Pixels/src/week4/"+filename);
+	public int cnt = 0;
 
-                    if (filename !=null) 
-                    {
-                    	teststring("E:/workspace/Java-Pixels/src/week4/"+filename, "public",filename);
-                    } 
+	public void plugin_execute() throws IOException {
+		// check if dirctory exist and create a list of files into an array
+		File dir = new File("E:/workspace/Java-Pixels/src/week4");
+		String[] children = dir.list();
+		if (children == null) {
+			System.out.println("does not exist is not a directory");
+		} else {
+			for (int i = 0; i < children.length; i++) {
+				String filename = children[i];
+				// providing input to "teststring" method to check word count of
+				// "public" in each file
+				if (filename != null) {
+					teststring("E:/workspace/Java-Pixels/src/week4/" + filename, "public", filename);
+				}
 
-                }
-                System.out.println("......................................................");
-        		System.out.println("Total count:"+cnt);
-            }
-    }
+			}
+			System.out.println("......................................................");
+			System.out.println("Total count:" + cnt);
+		}
+	}
 
-	public boolean teststring(String filePath, String str,String name) throws IOException {
-		
+	// Actual logic to check the word count of "public" keyword in individual
+	// file and in whole directory
+	public boolean teststring(String filePath, String str, String name) throws IOException {
+
 		BufferedReader br = null;
 		File file = new File(filePath);
 		boolean result = false;
@@ -46,7 +45,7 @@ public class LinuxSearch {
 		else
 			br = new BufferedReader(new FileReader(filePath));
 		String sCurrentLine = "";
-		int count=0;
+		int count = 0;
 		while ((sCurrentLine = br.readLine()) != null) {
 			if (sCurrentLine.contains(str)) {
 				result = true;
@@ -54,13 +53,13 @@ public class LinuxSearch {
 				cnt++;
 			}
 		}
-		System.out.println(name+":"+count);
+		System.out.println(name + ":" + count);
 		br.close();
 		return result;
 	}
 
 	public static void main(String[] args) throws IOException {
-LinuxSearch l=new LinuxSearch();
-l.plugin_execute();
+		LinuxSearch l = new LinuxSearch();
+		l.plugin_execute();
 	}
 }
